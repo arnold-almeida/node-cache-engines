@@ -1,0 +1,11 @@
+{
+  "name": "cache-profiles",
+  "version": "1.0.0",
+  "description": "Consistent caching interface, mutiple storage options",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Arnold Almeida <arnold@floatingpotins.com.au> (http://floatingpoints.com.au)",
+  "license": "MIT"
+}
