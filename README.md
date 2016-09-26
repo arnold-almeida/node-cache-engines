@@ -9,61 +9,58 @@ A caching lib with simple interface with support for mutiple engines
 ## Usage
 
 ```javascript
-let CacheProfile = require('node-cache-engines');
+// config/cache-profile.js
+'use strict'
+let CacheProfile = require('node-cache-engines')
 
-let Cache = new CacheProfile()
-let key = 'SOME-KEY'
-let data = [
-    {
-        firstName: 'John'
-        lastName: 'Doe'
-    },
-    {
-        firstName: 'Jane'
-        lastName: 'Doe'
-    },
-]
-
-function listUsers () {
-
-    // Is the object already in the cache ?
-    if (Cache.check(cacheKey)) {
-
-        // read it out skip any code
-        Cache.read(cacheKey)
-    }
-
-    // write it to the cache for next time
-    Cache.write(cacheKey, data)
-
-    return data
+// Configure all your CacheProfiles
+module.exports = {
+  'RedisCache': new CacheProfile({
+    engine: 'redis',
+    collection: 'default',
+    expiresSecs: 60 * 60 * 48 // 48 hrs
+  })
 }
 
-listUsers(data)
 ```
 
+```javascript
+// some-service.js
 
-## API
+let RedisCache = require('../config/cache').RedisCache
+let key = '123'
 
-### check = function(key)
+// Check if key exists in the cache
+if (RedisCache.check(key)) {
+  return RedisCache.read(key)
+}
 
-### read = function(key)
+// do work to get your data...
+return RedisCache.write(key, data)
 
-### write = function(key, val)
+```
 
-### delete = function(key)
+## Cache interface
+
+## check = function(key)
+
+## read = function(key)
+
+## write = function(key, val)
+
+## delete = function(key)
 
 Deletes a key out of the cache.
 
-### reset = function()
+## reset = function()
 
 Clear the cache entirely, throwing away all values.
 
-### hits = function()
+## hits = function()
 
-### misses = function()
+## misses = function()
 
-### keys = function()
+## keys = function()
 
 
 ## Note on Patches/Pull Requests
