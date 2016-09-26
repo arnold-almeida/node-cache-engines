@@ -1,6 +1,6 @@
 {
   "name": "node-cache-engines",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Consistent caching interface, mutiple storage options (Memory, Redis)",
   "main": "index.js",
   "scripts": {
