@@ -7,5 +7,19 @@
     "test": "test"
   },
   "author": "Arnold Almeida <arnold@floatingpotins.com.au> (http://floatingpoints.com.au)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnold-almeida/node-cache-engines.git"
+  },
+  "keywords": [
+    "cache",
+    "caching",
+    "redis",
+    "memory"
+  ],
+  "bugs": {
+    "url": "https://github.com/arnold-almeida/node-cache-engines/issues"
+  },
+  "homepage": "https://github.com/arnold-almeida/node-cache-engines#readme"
 }
